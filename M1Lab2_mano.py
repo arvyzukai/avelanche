@@ -52,7 +52,7 @@ with col1:
             csv_path = get_dataset_path()
             # st.session_state['df'] = pd.read_csv(csv_path)
             # TESTING PURPOSES ONLY - LOAD A SMALLER DATASET
-            st.session_state['df'] = pd.read_csv(csv_path).head() # Load only first 5 rows for faster testing
+            st.session_state['df'] = pd.read_csv(csv_path).sample(10) # Load only 10 rows for faster testing
             st.success("Data loaded successfully!")
         except FileNotFoundError:
             st.error("CSV file not found. Please ensure the file exists at the specified path.")
@@ -93,4 +93,5 @@ if 'df' in st.session_state:
             showlegend=False
         )
         st.plotly_chart(fig, use_container_width=True)
+
 
