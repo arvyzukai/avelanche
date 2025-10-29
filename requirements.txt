@@ -1,5 +1,7 @@
 streamlit
+dotenv
 pandas
 openai
 plotly
 altair
+
